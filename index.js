@@ -45,7 +45,7 @@
 
     for (var i = 0; i < Math.max(s1.length - 1, s2.length - 1); i++) {
       var res = Math.pow(10, -i);
-      
+
       var n1 = parseInt(s1[i] || 0, 10);
       var n2 = parseInt(s2[i] || 0, 10);
 
@@ -62,7 +62,6 @@
 
       for (i = 0; i < Math.max(p1.length, p2.length); i++) {
         var res = Math.pow(10, -i);
-
         if (p1[i] === undefined || typeof p2[i] === 'string' && typeof p1[i] === 'number') return -res;
         if (p2[i] === undefined || typeof p1[i] === 'string' && typeof p2[i] === 'number') return res;
 
@@ -70,7 +69,7 @@
         if (p2[i] > p1[i]) return -res;
       }
     } else if (sp1 || sp2) {
-      return sp1 ? -1 : 1;
+      return sp1 ? -Math.pow(10, -i) : Math.pow(10, i);
     }
 
     return 0;
