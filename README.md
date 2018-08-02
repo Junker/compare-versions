@@ -23,9 +23,12 @@ $ npm install compare-versions
 ```javascript
 var compareVersions = require('compare-versions');
 
-compareVersions('10.1.8', '10.0.4'); //  1
+compareVersions('10.0.5', '10.0.4'); //  0.01
+compareVersions('10.1.8', '10.0.4'); //  0.1
+compareVersions('11.0.1', '10.0.4'); //  1
 compareVersions('10.0.1', '10.0.1'); //  0
-compareVersions('10.1.1', '10.2.2'); // -1
+compareVersions('10.1.1', '10.2.2'); // -0.1
+compareVersions('10.1.1', '11.2.2'); // -1
 ```
 
 Can also be used for sorting:
